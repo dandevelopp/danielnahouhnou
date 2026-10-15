@@ -1,520 +1,392 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Découvrez DANOS : photographie, réalisation audiovisuelle, création de contenus et communication digitale.">
+    <title>DANOS | Photographie, vidéo et communication</title>
+    <meta name="description" content="DANOS : photographie, réalisation audiovisuelle, création de contenus et communication digitale.">
     <meta name="theme-color" content="#080808">
 
-    <title>DANOS | Créativité, Image & Communication</title>
+    <!-- Aperçu lors d'un partage (WhatsApp, Facebook...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DANOS | Photographie, vidéo et communication">
+    <meta property="og:description" content="Je raconte des histoires en images.">
+    <meta property="og:image" content="./images/image-1.jpg">
 
-    <!-- Typographies -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Feuille de style -->
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-    <!-- ================= NAVIGATION ================= -->
+    <!-- ===== NAVIGATION ===== -->
+    <header class="menu" id="menu">
+        <a href="#accueil" class="logo" aria-label="DANOS, accueil">DANOS<span class="or">.</span></a>
 
-    <header class="menu">
-        <a href="#accueil" class="logo" aria-label="DANOS, accueil">DANOS<span class="point-or">.</span></a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+        </button>
 
-        <nav aria-label="Navigation principale">
+        <nav id="navigation" aria-label="Navigation principale">
             <ul class="liens-menu">
-                <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#competences">Expertises</a></li>
                 <li><a href="#realisations">Galerie</a></li>
                 <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="lien-contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="contenu">
 
-    <main>
-
-        <!-- ================= ACCUEIL ================= -->
-
+        <!-- ===== ACCUEIL ===== -->
         <section class="hero" id="accueil">
             <div class="hero-contenu">
-
-                <p class="surtitre">CRÉATIVITÉ · IMAGE · COMMUNICATION</p>
-
-                <h1>
-                    Je raconte des histoires
-                    <span class="point-or">en images.</span>
-                </h1>
-
+                <p class="surtitre">Créativité, image, communication</p>
+                <h1>Je raconte des histoires <span class="or">en images.</span></h1>
                 <p class="hero-description">
-                    Bienvenue dans l'univers DANOS, un espace dédié à la
-                    photographie, à la vidéo, à la création de contenus
-                    et à la communication digitale.
+                    Bienvenue dans l'univers DANOS : photographie, vidéo,
+                    création de contenus et communication digitale.
                 </p>
-
                 <div class="hero-actions">
-                    <a href="#realisations" class="bouton-principal">
-                        Découvrir mon univers
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <a href="#realisations" class="bouton bouton-principal">
+                        Voir la galerie <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </a>
-
-                    <a href="#contact" class="bouton-secondaire">
-                        Me contacter
-                    </a>
+                    <a href="#contact" class="bouton bouton-secondaire">Me contacter</a>
                 </div>
-
-                <p class="hero-signature">
-                    L'image attire. L'histoire marque. L'émotion reste.
-                </p>
-
+                <p class="hero-signature">L'image attire. L'histoire marque. L'émotion reste.</p>
             </div>
         </section>
 
-
-        <!-- ================= À PROPOS ================= -->
-
+        <!-- ===== À PROPOS ===== -->
         <section class="section" id="apropos">
-
             <div class="entete-section">
-                <p class="surtitre">QUI SUIS-JE ?</p>
-                <h2>À propos de <span class="point-or">DANOS</span></h2>
-                <p>
-                    La créativité au service des histoires, des personnes
-                    et des marques.
-                </p>
+                <p class="surtitre">Qui suis-je ?</p>
+                <h2>À propos de <span class="or">DANOS</span></h2>
+                <p>La créativité au service des histoires, des personnes et des marques.</p>
             </div>
 
             <div class="apropos-grille">
-
                 <div class="apropos-texte">
-                    <p>
-                        Je suis un créatif passionné par l'image,
-                        l'audiovisuel et la communication. À travers
-                        mes projets, je cherche à transmettre des idées,
-                        valoriser les personnes et donner vie aux histoires.
-                    </p>
-
-                    <p>
-                        Mon univers associe sens du récit, créativité
-                        visuelle et outils numériques pour concevoir
-                        des contenus adaptés à différents publics.
-                    </p>
-
-                    <p>
-                        Avec <strong>DANOS</strong>, chaque projet est
-                        une occasion de créer une image cohérente,
-                        authentique et mémorable.
-                    </p>
+                    <p>Je suis un créatif passionné par l'image, l'audiovisuel et la communication. À travers mes projets, je transmets des idées, je valorise les personnes et je donne vie aux histoires.</p>
+                    <p>Mon univers associe sens du récit, créativité visuelle et outils numériques pour concevoir des contenus adaptés à chaque public.</p>
+                    <p>Avec <strong>DANOS</strong>, chaque projet devient une image cohérente, authentique et mémorable.</p>
                 </div>
 
                 <div class="apropos-points">
-
                     <article class="point-fort">
                         <h3><i class="fa-solid fa-camera" aria-hidden="true"></i> Image</h3>
                         <p>Portraits, photographie et mise en valeur visuelle.</p>
                     </article>
-
                     <article class="point-fort">
                         <h3><i class="fa-solid fa-video" aria-hidden="true"></i> Audiovisuel</h3>
                         <p>Captation, réalisation vidéo et narration visuelle.</p>
                     </article>
-
                     <article class="point-fort">
                         <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Créativité</h3>
                         <p>Idées, concepts et contenus pour communiquer avec impact.</p>
                     </article>
-
                 </div>
-
             </div>
         </section>
 
-
-        <!-- ================= EXPERTISES ================= -->
-
-        <section class="section section-sombre" id="competences">
-
+        <!-- ===== EXPERTISES ===== -->
+        <section class="section section-claire" id="competences">
             <div class="entete-section">
-                <p class="surtitre">MON SAVOIR-FAIRE</p>
-                <h2>Mes <span class="point-or">expertises</span></h2>
-                <p>
-                    Des compétences complémentaires pour raconter,
-                    créer et valoriser votre image.
-                </p>
+                <p class="surtitre">Mon savoir-faire</p>
+                <h2>Mes <span class="or">expertises</span></h2>
+                <p>Des compétences complémentaires pour raconter, créer et valoriser votre image.</p>
             </div>
 
             <div class="competences-grille">
-
                 <article class="carte-competence">
                     <i class="fa-solid fa-camera icone" aria-hidden="true"></i>
                     <h3>Photographie</h3>
-                    <p>
-                        Portraits, événements, séances photo et création
-                        d'images soignées.
-                    </p>
+                    <p>Portraits, événements, séances photo et création d'images soignées.</p>
                 </article>
-
                 <article class="carte-competence">
                     <i class="fa-solid fa-film icone" aria-hidden="true"></i>
                     <h3>Production vidéo</h3>
-                    <p>
-                        Captation, montage et réalisation de contenus
-                        audiovisuels.
-                    </p>
+                    <p>Captation, montage et réalisation de contenus audiovisuels.</p>
                 </article>
-
                 <article class="carte-competence">
                     <i class="fa-solid fa-pen-nib icone" aria-hidden="true"></i>
                     <h3>Design graphique</h3>
-                    <p>
-                        Création de visuels, affiches et supports
-                        de communication.
-                    </p>
+                    <p>Création de visuels, affiches et supports de communication.</p>
                 </article>
-
                 <article class="carte-competence">
                     <i class="fa-solid fa-bullhorn icone" aria-hidden="true"></i>
                     <h3>Communication digitale</h3>
-                    <p>
-                        Création de contenus et valorisation de la présence
-                        numérique des marques.
-                    </p>
+                    <p>Contenus et valorisation de la présence numérique des marques.</p>
                 </article>
-
                 <article class="carte-competence">
                     <i class="fa-solid fa-clapperboard icone" aria-hidden="true"></i>
                     <h3>Storytelling</h3>
-                    <p>
-                        Construction de récits visuels qui transmettent
-                        un message et suscitent une émotion.
-                    </p>
+                    <p>Récits visuels qui transmettent un message et suscitent une émotion.</p>
                 </article>
-
                 <article class="carte-competence">
                     <i class="fa-solid fa-wand-magic-sparkles icone" aria-hidden="true"></i>
                     <h3>Création numérique</h3>
-                    <p>
-                        Exploration d'outils numériques et d'approches
-                        créatives pour développer de nouvelles idées.
-                    </p>
+                    <p>Outils numériques et approches créatives pour développer de nouvelles idées.</p>
                 </article>
-
             </div>
         </section>
 
-
-        <!-- ================= GALERIE PHOTO ================= -->
-
-        <section class="section section-sombre" id="realisations">
-
+        <!-- ===== GALERIE ===== -->
+        <section class="section" id="realisations">
             <div class="entete-section">
-                <p class="surtitre">MON UNIVERS VISUEL</p>
-                <h2>Galerie <span class="point-or">DANOS</span></h2>
-                <p>
-                    Une sélection de photographies et de réalisations
-                    qui reflètent mon univers créatif.
-                </p>
+                <p class="surtitre">Mon univers visuel</p>
+                <h2>Galerie <span class="or">DANOS</span></h2>
+                <p>Une sélection de photographies qui reflète mon univers créatif.</p>
             </div>
 
-            <div class="galerie-vitrine">
-
+            <div class="galerie">
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button"
-                        data-image="./images/image-1.jpg"
-                        aria-label="Agrandir la photo 1">
-                        <img src="./images/image-1.jpg"
-                            alt="Photographie DANOS 1"
-                            loading="eager"
-                            onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay">
-                            <span class="legende-numero">01 / DANOS</span>
-                            <span class="legende-titre">Portrait</span>
-                        </span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-1.jpg" aria-label="Agrandir la photo 1 : Portrait">
+                        <img src="./images/image-1.jpg" alt="Portrait, photographie DANOS" width="800" height="1000" fetchpriority="high">
+                        <span class="photo-overlay"><span class="legende-titre">Portrait</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-2.jpg" aria-label="Agrandir la photo 2">
-                        <img src="./images/image-2.jpg" alt="Photographie DANOS 2" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">02 / DANOS</span><span class="legende-titre">Expression</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-2.jpg" aria-label="Agrandir la photo 2 : Expression">
+                        <img src="./images/image-2.jpg" alt="Expression, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Expression</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-3.jpg" aria-label="Agrandir la photo 3">
-                        <img src="./images/image-3.jpg" alt="Photographie DANOS 3" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">03 / DANOS</span><span class="legende-titre">Style</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-3.jpg" aria-label="Agrandir la photo 3 : Style">
+                        <img src="./images/image-3.jpg" alt="Style, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Style</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-4.jpg" aria-label="Agrandir la photo 4">
-                        <img src="./images/image-4.jpg" alt="Photographie DANOS 4" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">04 / DANOS</span><span class="legende-titre">Créativité</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-4.jpg" aria-label="Agrandir la photo 4 : Créativité">
+                        <img src="./images/image-4.jpg" alt="Créativité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Créativité</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-5.jpg" aria-label="Agrandir la photo 5">
-                        <img src="./images/image-5.jpg" alt="Photographie DANOS 5" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">05 / DANOS</span><span class="legende-titre">Lumière</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-5.jpg" aria-label="Agrandir la photo 5 : Lumière">
+                        <img src="./images/image-5.jpg" alt="Lumière, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Lumière</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-6.jpg" aria-label="Agrandir la photo 6">
-                        <img src="./images/image-6.jpg" alt="Photographie DANOS 6" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">06 / DANOS</span><span class="legende-titre">Présence</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-6.jpg" aria-label="Agrandir la photo 6 : Présence">
+                        <img src="./images/image-6.jpg" alt="Présence, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Présence</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-7.jpg" aria-label="Agrandir la photo 7">
-                        <img src="./images/image-7.jpg" alt="Photographie DANOS 7" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">07 / DANOS</span><span class="legende-titre">Identité</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-7.jpg" aria-label="Agrandir la photo 7 : Identité">
+                        <img src="./images/image-7.jpg" alt="Identité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Identité</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-8.jpg" aria-label="Agrandir la photo 8">
-                        <img src="./images/image-8.jpg" alt="Photographie DANOS 8" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">08 / DANOS</span><span class="legende-titre">Inspiration</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-8.jpg" aria-label="Agrandir la photo 8 : Inspiration">
+                        <img src="./images/image-8.jpg" alt="Inspiration, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Inspiration</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-9.jpg" aria-label="Agrandir la photo 9">
-                        <img src="./images/image-9.jpg" alt="Photographie DANOS 9" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">09 / DANOS</span><span class="legende-titre">Vision</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-9.jpg" aria-label="Agrandir la photo 9 : Vision">
+                        <img src="./images/image-9.jpg" alt="Vision, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Vision</span></span>
                     </button>
                 </figure>
-
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-10.jpg" aria-label="Agrandir la photo 10">
-                        <img src="./images/image-10.jpg" alt="Photographie DANOS 10" loading="lazy" onerror="this.closest('.item-galerie').classList.add('image-indisponible')">
-                        <span class="photo-overlay"><span class="legende-numero">10 / DANOS</span><span class="legende-titre">Signature</span></span>
+                    <button class="photo-ouvrir" type="button" data-image="./images/image-10.jpg" aria-label="Agrandir la photo 10 : Signature">
+                        <img src="./images/image-10.jpg" alt="Signature, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                        <span class="photo-overlay"><span class="legende-titre">Signature</span></span>
                     </button>
                 </figure>
-
             </div>
 
-            <p class="message-galerie">
-                Chaque image raconte une histoire.
-            </p>
-
+            <p class="message-galerie">Chaque image raconte une histoire.</p>
         </section>
 
-
-        <!-- ================= PROJETS ================= -->
-
-        <section class="section" id="projets">
-
+        <!-- ===== PROJETS ===== -->
+        <section class="section section-claire" id="projets">
             <div class="entete-section">
-                <p class="surtitre">MES INITIATIVES</p>
-                <h2>Projets & <span class="point-or">univers créatifs</span></h2>
-                <p>
-                    Des espaces de création, de narration et de valorisation
-                    de l'image.
-                </p>
+                <p class="surtitre">Mes initiatives</p>
+                <h2>Projets &amp; <span class="or">univers créatifs</span></h2>
+                <p>Des espaces de création, de narration et de valorisation de l'image.</p>
             </div>
 
             <div class="projets-grille">
-
                 <article class="carte-projet">
                     <h3>Authentic Danos</h3>
-                    <p>
-                        Un univers de création audiovisuelle, de narration
-                        visuelle et de production de contenus.
-                    </p>
-                    <a href="#contact">
-                        Découvrir le projet
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                    </a>
+                    <p>Un univers de création audiovisuelle, de narration visuelle et de production de contenus.</p>
+                    <!-- Remplace #contact par le lien de la page du projet -->
+                    <a href="#contact">Découvrir le projet <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
-
                 <article class="carte-projet">
                     <h3>Zranssa Photography</h3>
-                    <p>
-                        Un espace dédié à la photographie, aux portraits
-                        et à la mise en valeur des personnes.
-                    </p>
-                    <a href="#contact">
-                        Prendre contact
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                    </a>
+                    <p>Un espace dédié à la photographie, aux portraits et à la mise en valeur des personnes.</p>
+                    <a href="#contact">Prendre contact <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
-
             </div>
         </section>
 
-
-        <!-- ================= CONTACT ================= -->
-
+        <!-- ===== CONTACT ===== -->
         <section class="section section-contact" id="contact">
-
             <div class="contact-contenu">
-                <p class="surtitre">DONNONS VIE À VOS IDÉES</p>
+                <p class="surtitre">Donnons vie à vos idées</p>
+                <h2>Un projet en tête ? <span class="or">Parlons-en.</span></h2>
+                <p>Photo, vidéo, graphisme ou communication : écrivez-moi pour échanger sur vos idées.</p>
 
-                <h2>
-                    Un projet en tête ?
-                    <span class="point-or">Parlons-en.</span>
-                </h2>
-
-                <p>
-                    Vous avez un projet photo, vidéo, graphique ou de
-                    communication ? Contactez-moi pour échanger sur vos idées.
-                </p>
-
-                <!-- Remplace cette adresse si nécessaire -->
-                <a class="bouton-principal"
-                    href="mailto:contact@danos.com">
-                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                    &nbsp; Envoyer un e-mail
+                <a class="bouton bouton-principal" href="mailto:danielnahounou7@gmail.com">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i> Envoyer un e-mail
                 </a>
 
-                <div class="reseaux-sociaux" aria-label="Réseaux sociaux">
+                <address class="coordonnees">
+                    <a href="tel:+2250777977355"><i class="fa-solid fa-phone" aria-hidden="true"></i> 07 77 97 73 55</a>
+                    <a href="mailto:danielnahounou7@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> danielnahounou7@gmail.com</a>
+                </address>
 
-                    <!-- Remplace les # par tes vrais liens -->
-                    <a href="#" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-                    </a>
-
-                    <a href="#" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                    </a>
-
-                    <a href="#" aria-label="TikTok">
-                        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-                    </a>
-
-                    <a href="#" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    </a>
-
+                <!-- Vérifie les liens Facebook et YouTube, puis corrige-les si besoin -->
+                <div class="reseaux-sociaux">
+                    <a href="https://wa.me/2250777977355" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                    <a href="https://www.facebook.com/search/top?q=DANOS" target="_blank" rel="noopener noreferrer" aria-label="Facebook : DANOS"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> DANOS</a>
+                    <a href="https://www.youtube.com/@Danosoff" target="_blank" rel="noopener noreferrer" aria-label="YouTube : Danosoff"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Danosoff</a>
                 </div>
             </div>
-
         </section>
 
     </main>
 
-
-    <!-- ================= VISIONNEUSE ================= -->
-
-    <div class="visionneuse" id="zoom" role="dialog"
-        aria-modal="true" aria-label="Visionneuse photo">
-
-        <button class="zoom-fermer" type="button" aria-label="Fermer">
-            &times;
-        </button>
-
-        <button class="zoom-precedent" type="button" aria-label="Photo précédente">
-            &#10094;
-        </button>
-
-        <img id="zoom-image" src="" alt="Photographie agrandie">
-
-        <button class="zoom-suivant" type="button" aria-label="Photo suivante">
-            &#10095;
-        </button>
-
+    <!-- ===== VISIONNEUSE ===== -->
+    <div class="visionneuse" id="zoom" role="dialog" aria-modal="true" aria-label="Visionneuse photo" hidden>
+        <button class="zoom-fermer" type="button" aria-label="Fermer">&times;</button>
+        <button class="zoom-precedent" type="button" aria-label="Photo précédente">&#10094;</button>
+        <img id="zoom-image" alt="">
+        <button class="zoom-suivant" type="button" aria-label="Photo suivante">&#10095;</button>
     </div>
 
-
-    <!-- ================= PIED DE PAGE ================= -->
-
     <footer class="pied-page">
-        <p>
-            &copy; <span id="annee"></span> DANOS.
-            Tous droits réservés.
-        </p>
-        <p>Créativité · Image · Communication</p>
+        <p>&copy; <span id="annee">2026</span> DANOS. Tous droits réservés.</p>
+        <p>Créativité, image, communication</p>
+        <p class="github"><i class="fa-brands fa-github" aria-hidden="true"></i> Site développé sur GitHub</p>
     </footer>
 
-
-    <!-- ================= JAVASCRIPT ================= -->
-
     <script>
-        // Année automatique
-        document.getElementById("annee").textContent =
-            new Date().getFullYear();
+// Année automatique dans le pied de page
+document.getElementById("annee").textContent = new Date().getFullYear();
 
-        // Galerie et visionneuse
-        const boutonsPhotos = document.querySelectorAll(".photo-ouvrir");
-        const visionneuse = document.getElementById("zoom");
-        const imageZoom = document.getElementById("zoom-image");
-        const boutonFermer = document.querySelector(".zoom-fermer");
-        const boutonPrecedent = document.querySelector(".zoom-precedent");
-        const boutonSuivant = document.querySelector(".zoom-suivant");
+/* ===== Menu mobile ===== */
+const menu = document.getElementById("menu");
+const burger = document.querySelector(".burger");
+const navigation = document.getElementById("navigation");
 
-        let indexPhoto = 0;
+function fermerMenu() {
+    navigation.classList.remove("ouvert");
+    burger.setAttribute("aria-expanded", "false");
+    burger.setAttribute("aria-label", "Ouvrir le menu");
+}
 
-        function afficherPhoto(index) {
-            indexPhoto = (index + boutonsPhotos.length) % boutonsPhotos.length;
+burger.addEventListener("click", () => {
+    const ouvert = navigation.classList.toggle("ouvert");
+    burger.setAttribute("aria-expanded", String(ouvert));
+    burger.setAttribute("aria-label", ouvert ? "Fermer le menu" : "Ouvrir le menu");
+});
 
-            const bouton = boutonsPhotos[indexPhoto];
-            const image = bouton.querySelector("img");
+navigation.addEventListener("click", (e) => {
+    if (e.target.closest("a")) fermerMenu();
+});
 
-            imageZoom.src = bouton.dataset.image;
-            imageZoom.alt = image.alt;
+// Ombre/bordure du menu après un peu de défilement
+const majMenu = () => menu.classList.toggle("defile", window.scrollY > 20);
+window.addEventListener("scroll", majMenu, { passive: true });
+majMenu();
 
-            visionneuse.classList.add("active");
-            document.body.style.overflow = "hidden";
-            boutonFermer.focus();
+/* ===== Galerie : photos manquantes ===== */
+document.querySelectorAll(".item-galerie img").forEach((img) => {
+    const marquer = () => img.closest(".item-galerie").classList.add("image-indisponible");
+    img.addEventListener("error", marquer);
+    // Cas où l'erreur est survenue avant que le script soit chargé
+    if (img.complete && img.naturalWidth === 0) marquer();
+});
+
+/* ===== Visionneuse ===== */
+const boutons = [...document.querySelectorAll(".photo-ouvrir")];
+const visionneuse = document.getElementById("zoom");
+const imageZoom = document.getElementById("zoom-image");
+const btnFermer = visionneuse.querySelector(".zoom-fermer");
+const btnPrecedent = visionneuse.querySelector(".zoom-precedent");
+const btnSuivant = visionneuse.querySelector(".zoom-suivant");
+
+let index = 0;
+
+function afficher(i) {
+    index = (i + boutons.length) % boutons.length;
+    const bouton = boutons[index];
+    imageZoom.src = bouton.dataset.image;
+    imageZoom.alt = bouton.querySelector("img").alt;
+    visionneuse.hidden = false;
+    visionneuse.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function fermer() {
+    visionneuse.classList.remove("active");
+    visionneuse.hidden = true;
+    imageZoom.removeAttribute("src");
+    document.body.style.overflow = "";
+    boutons[index].focus();
+}
+
+boutons.forEach((bouton, i) => {
+    bouton.addEventListener("click", () => {
+        afficher(i);
+        btnFermer.focus();
+    });
+});
+
+btnFermer.addEventListener("click", fermer);
+btnPrecedent.addEventListener("click", () => afficher(index - 1));
+btnSuivant.addEventListener("click", () => afficher(index + 1));
+
+// Clic sur le fond noir = fermeture
+visionneuse.addEventListener("click", (e) => {
+    if (e.target === visionneuse) fermer();
+});
+
+// Clavier : Échap, flèches, et Tab gardé dans la visionneuse
+document.addEventListener("keydown", (e) => {
+    if (!visionneuse.classList.contains("active")) return;
+
+    if (e.key === "Escape") fermer();
+    if (e.key === "ArrowLeft") afficher(index - 1);
+    if (e.key === "ArrowRight") afficher(index + 1);
+
+    if (e.key === "Tab") {
+        const focusables = [btnFermer, btnPrecedent, btnSuivant];
+        const premier = focusables[0];
+        const dernier = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === premier) {
+            e.preventDefault();
+            dernier.focus();
+        } else if (!e.shiftKey && document.activeElement === dernier) {
+            e.preventDefault();
+            premier.focus();
         }
+    }
+});
 
-        function fermerVisionneuse() {
-            visionneuse.classList.remove("active");
-            document.body.style.overflow = "";
-            imageZoom.src = "";
-            boutonsPhotos[indexPhoto].focus();
-        }
+// Glissement du doigt sur mobile
+let departX = 0;
+visionneuse.addEventListener("touchstart", (e) => { departX = e.changedTouches[0].clientX; }, { passive: true });
+visionneuse.addEventListener("touchend", (e) => {
+    const delta = e.changedTouches[0].clientX - departX;
+    if (Math.abs(delta) > 50) afficher(index + (delta < 0 ? 1 : -1));
+}, { passive: true });
 
-        boutonsPhotos.forEach((bouton, index) => {
-            bouton.addEventListener("click", () => afficherPhoto(index));
-        });
-
-        boutonFermer.addEventListener("click", fermerVisionneuse);
-
-        boutonPrecedent.addEventListener("click", () => {
-            afficherPhoto(indexPhoto - 1);
-        });
-
-        boutonSuivant.addEventListener("click", () => {
-            afficherPhoto(indexPhoto + 1);
-        });
-
-        visionneuse.addEventListener("click", (event) => {
-            if (event.target === visionneuse) {
-                fermerVisionneuse();
-            }
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (!visionneuse.classList.contains("active")) return;
-
-            if (event.key === "Escape") fermerVisionneuse();
-            if (event.key === "ArrowLeft") afficherPhoto(indexPhoto - 1);
-            if (event.key === "ArrowRight") afficherPhoto(indexPhoto + 1);
-        });
-
-        // Affiche un message utile si un fichier photo est introuvable
-        document.querySelectorAll(".item-galerie img").forEach((image) => {
-            image.addEventListener("error", () => {
-                image.closest(".item-galerie").classList.add("image-indisponible");
-            });
-        });
     </script>
-
 </body>
 </html>
