@@ -1,1 +1,144 @@
+:root {
+  --fond: #0e0e10;
+  --carte: #18181c;
+  --texte: #e8e8ea;
+  --discret: #9a9aa3;
+  --or: #d4a64a;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.7;
+}
+
+a { color: var(--or); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* En-tête */
+header {
+  text-align: center;
+  padding: 80px 20px 50px;
+  background: linear-gradient(180deg, #1a1608 0%, var(--fond) 100%);
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: 8px;
+  color: var(--or);
+}
+
+.titres {
+  margin-top: 10px;
+  color: var(--discret);
+  font-size: 1.05rem;
+}
+
+nav {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+}
+
+nav a {
+  color: var(--texte);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s, color .2s;
+}
+
+nav a:hover {
+  color: var(--or);
+  border-color: var(--or);
+  text-decoration: none;
+}
+
+/* Sections */
+main { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+section { padding: 50px 0; }
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--or);
+  border-left: 4px solid var(--or);
+  padding-left: 14px;
+}
+
+section p { margin-bottom: 12px; }
+
+/* Badges compétences */
+.badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badges li {
+  padding: 8px 18px;
+  border: 1px solid var(--or);
+  border-radius: 999px;
+  font-size: .95rem;
+}
+
+/* Parcours */
+#experiences article {
+  background: var(--carte);
+  border-left: 3px solid var(--or);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+
+.date {
+  display: inline-block;
+  font-size: .8rem;
+  color: var(--or);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 { margin: 4px 0 6px; font-size: 1.1rem; }
+
+/* Projets */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cartes article {
+  background: var(--carte);
+  border: 1px solid #2a2a30;
+  border-radius: 10px;
+  padding: 22px;
+  transition: transform .2s, border-color .2s;
+}
+
+.cartes article:hover {
+  transform: translateY(-4px);
+  border-color: var(--or);
+}
+
+/* Pied de page */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--discret);
+  font-size: .85rem;
+  border-top: 1px solid #222;
+}
+
+@media (max-width: 600px) {
+  header { padding-top: 60px; }
+  section { padding: 35px 0; }
+}
