@@ -1,390 +1,1198 @@
 
-/* =========================================
-   DANOS — FINITION PREMIUM
-   À ajouter à la fin de style.css
-========================================= */
+/* =====================================================
+   DANOS — PORTFOLIO PROFESSIONNEL
+   Direction artistique : Noir, or et élégance
+===================================================== */
 
-/* 1. Navigation plus élégante */
+/* 1. VARIABLES ET RÉINITIALISATION */
+
+:root {
+    --fond: #0b0b0d;
+    --fond-2: #111115;
+    --carte: #17171c;
+    --ligne: #292930;
+
+    --texte: #f4f1eb;
+    --discret: #aaa7b0;
+
+    --or: #d4a64a;
+    --or-clair: #f1d089;
+
+    --titre: "Playfair Display", Georgia, serif;
+    --corps: "DM Sans", "Segoe UI", Arial, sans-serif;
+
+    --largeur: 1180px;
+    --navigation: 78px;
+
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--navigation) + 20px);
+}
+
+body {
+    background: var(--fond);
+    color: var(--texte);
+    font-family: var(--corps);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+body,
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button,
+a {
+    outline-offset: 5px;
+}
+
+::selection {
+    background: var(--or);
+    color: var(--fond);
+}
+
+
+/* 2. NAVIGATION */
+
 .menu {
-  min-height: 74px;
-  padding-inline: clamp(18px, 5vw, 76px);
-  gap: 24px;
-  transition: background .3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: var(--navigation);
+    padding: 14px max(5%, calc((100% - var(--largeur)) / 2));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: rgba(11, 11, 13, 0.94);
+    border-bottom: 1px solid rgba(212, 166, 74, 0.14);
+    backdrop-filter: blur(16px);
 }
 
 .logo {
-  white-space: nowrap;
-  transition: color .3s ease;
+    flex-shrink: 0;
+    font-family: var(--titre);
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-.liens {
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(12px, 2vw, 26px);
+.logo span {
+    color: var(--or);
 }
 
-.liens a {
-  font-size: .76rem;
-  letter-spacing: 1px;
-  white-space: nowrap;
+.liens-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 25px;
 }
 
-/* 2. Accueil plus cinématographique */
-header {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 100svh;
-  background:
-    radial-gradient(
-      ellipse at 50% 38%,
-      rgba(212, 166, 74, .15),
-      transparent 55%
-    ),
-    linear-gradient(180deg, #101014, #0b0b0d);
+.liens-menu a {
+    position: relative;
+    color: var(--discret);
+    font-size: 0.84rem;
+    font-weight: 600;
+    transition: color var(--transition);
 }
 
-header h1 {
-  text-shadow: 0 10px 50px rgba(212, 166, 74, .08);
+.liens-menu a:not(.lien-contact)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--or);
+    transition: width var(--transition);
 }
 
-.bouton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  border-radius: 2px;
+.liens-menu a:hover {
+    color: var(--or-clair);
 }
 
-.bouton:focus-visible,
-.liens a:focus-visible,
-.contact-carte:focus-visible {
-  outline: 2px solid var(--or-clair);
-  outline-offset: 5px;
+.liens-menu a:hover::after {
+    width: 100%;
 }
 
-/* 3. Sections et titres */
-section {
-  scroll-margin-top: 85px;
+.liens-menu .lien-contact {
+    padding: 9px 16px;
+    color: var(--fond);
+    background: var(--or);
+    border-radius: 3px;
 }
 
-section p {
-  line-height: 1.9;
+.liens-menu .lien-contact:hover {
+    background: var(--or-clair);
+    color: var(--fond);
 }
 
-h2 {
-  line-height: 1.3;
-  flex-wrap: wrap;
+
+/* 3. ACCUEIL / HERO */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: min(780px, calc(100svh - var(--navigation)));
+    padding: 120px 7% 100px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at 82% 35%,
+            rgba(212, 166, 74, 0.12),
+            transparent 38%
+        ),
+        linear-gradient(120deg, #0b0b0d 30%, #111115 100%);
+    border-bottom: 1px solid var(--ligne);
 }
 
-h3 {
-  line-height: 1.4;
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    right: 7%;
+    width: min(32vw, 420px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(212, 166, 74, 0.13);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(212, 166, 74, 0.025),
+        0 0 0 70px rgba(212, 166, 74, 0.018);
+    pointer-events: none;
 }
 
-/* Ne pas cacher le contenu si le script d'animation échoue */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  section {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
+.hero-contenu {
+    width: 100%;
+    max-width: var(--largeur);
+    margin: 0 auto;
 }
 
-/* 4. Compétences et cartes */
-.badges li {
-  cursor: default;
-  background: linear-gradient(145deg, #19191e, #121216);
-}
-
-.cartes article {
-  border-radius: 8px;
-  background: linear-gradient(145deg, #19191e, #111115);
-}
-
-.cartes article:hover {
-  border-color: rgba(212, 166, 74, .65);
-}
-
-/* 5. Galerie : vitrine photographique */
-.galerie {
-  column-count: 3;
-  column-gap: 18px;
-}
-
-.galerie figure {
-  position: relative;
-  isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, .06);
-  border-radius: 8px;
-  overflow: hidden;
-  background: #17171c;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, .16);
-  cursor: zoom-in;
-}
-
-.galerie figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-  min-height: 120px;
-  object-fit: cover;
-  transition:
-    transform .65s cubic-bezier(.2, .7, .2, 1),
-    filter .45s ease;
-}
-
-/* Voile élégant au survol */
-.galerie figure::after {
-  content: "AGRANDIR  ↗";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  color: var(--or-clair);
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, .03),
-    rgba(0, 0, 0, .7)
-  );
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .35s ease;
-}
-
-.galerie figure:hover img {
-  transform: scale(1.045);
-  filter: brightness(.8);
-}
-
-.galerie figure:hover::after {
-  opacity: 1;
-}
-
-.galerie figure:focus-within {
-  outline: 2px solid var(--or);
-  outline-offset: 3px;
-}
-
-/* 6. Vidéos harmonisées */
-.videos {
-  align-items: start;
-}
-
-.videos iframe,
-.videos video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  background: #050505;
-  border-radius: 8px;
-}
-
-/* 7. Contact */
-.contact-carte {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  border-radius: 8px;
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    background .25s ease;
-}
-
-a.contact-carte:hover {
-  background: #1d1b17;
-}
-
-/* 8. Visionneuse grand format */
-#zoom {
-  z-index: 1000;
-  padding: 60px 70px;
-  backdrop-filter: blur(12px);
-}
-
-#zoom img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-}
-
-#zoom button {
-  z-index: 2;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-#zoom .fermer {
-  top: 16px;
-  right: 20px;
-}
-
-#zoom .nav {
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .08);
-}
-
-#zoom .nav:hover {
-  color: #111;
-  background: var(--or);
-}
-
-/* 9. Tablettes */
-@media (max-width: 900px) {
-  .menu {
-    padding-inline: 22px;
-  }
-
-  .liens {
-    gap: 10px 16px;
-  }
-
-  .liens a {
-    font-size: .7rem;
-    letter-spacing: .5px;
-  }
-
-  .galerie {
-    column-count: 2;
-    column-gap: 14px;
-  }
-
-  .galerie figure {
-    margin-bottom: 14px;
-  }
-}
-
-/* 10. Téléphones */
-@media (max-width: 600px) {
-  html {
-    scroll-padding-top: 20px;
-  }
-
-  .menu {
-    position: sticky;
-    min-height: auto;
-    padding: 12px 16px;
-    flex-direction: column;
+.surtitre {
+    display: flex;
     align-items: center;
     gap: 10px;
-  }
 
-  .liens {
-    display: flex;
-    justify-content: center;
-    gap: 8px 14px;
-    width: 100%;
-  }
-
-  .liens a {
-    font-size: .68rem;
-    letter-spacing: 0;
-  }
-
-  header {
-    min-height: 85svh;
-    padding: 80px 18px 55px;
-  }
-
-  header h1 {
-    font-size: clamp(3rem, 14vw, 5rem);
+    color: var(--or);
+    font-size: 0.76rem;
+    font-weight: 700;
     letter-spacing: 3px;
-  }
-
-  .sur-titre {
-    font-size: .68rem;
-    letter-spacing: 4px;
-  }
-
-  .titres {
-    letter-spacing: .5px;
-    line-height: 1.9;
-  }
-
-  main {
-    padding-inline: 18px;
-  }
-
-  section {
-    padding: 58px 0;
-  }
-
-  h2 {
-    gap: 10px;
-    margin-bottom: 25px;
-  }
-
-  .galerie {
-    column-count: 2;
-    column-gap: 9px;
-  }
-
-  .galerie figure {
-    margin-bottom: 9px;
-    border-radius: 5px;
-  }
-
-  .galerie figure img {
-    min-height: 90px;
-  }
-
-  .galerie figure::after {
-    content: "↗";
-    font-size: 1.5rem;
-    letter-spacing: 0;
-  }
-
-  .videos {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  #zoom {
-    padding: 55px 8px;
-  }
-
-  #zoom img {
-    max-height: 78vh;
-  }
-
-  #zoom .prec {
-    left: 4px;
-  }
-
-  #zoom .suiv {
-    right: 4px;
-  }
+    text-transform: uppercase;
 }
 
-/* 11. Très petits écrans */
+.point-or {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    background: var(--or);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(212, 166, 74, 0.5);
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 27px 0;
+
+    font-family: var(--titre);
+    font-size: clamp(3rem, 6.5vw, 6rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.hero h1 span,
+.entete-section h2 span,
+.contact-contenu h2 span {
+    color: var(--or-clair);
+}
+
+.hero-description {
+    max-width: 640px;
+    color: var(--discret);
+    font-size: 1.06rem;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.bouton-principal,
+.bouton-secondaire {
+    min-height: 49px;
+    padding: 13px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-radius: 3px;
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        border-color var(--transition);
+}
+
+.bouton-principal {
+    color: #17120a;
+    background: var(--or);
+    border: 1px solid var(--or);
+}
+
+.bouton-principal:hover {
+    background: var(--or-clair);
+    border-color: var(--or-clair);
+    transform: translateY(-3px);
+}
+
+.bouton-secondaire {
+    color: var(--texte);
+    border: 1px solid #45434a;
+}
+
+.bouton-secondaire:hover {
+    color: var(--or-clair);
+    border-color: var(--or);
+    transform: translateY(-3px);
+}
+
+.hero-signature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 55px;
+
+    color: #77747e;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-signature .separateur {
+    color: var(--or);
+}
+
+.defiler {
+    position: absolute;
+    right: 7%;
+    bottom: 35px;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--or);
+    border: 1px solid rgba(212, 166, 74, 0.4);
+    border-radius: 50%;
+    transition: background var(--transition);
+}
+
+.defiler:hover {
+    background: rgba(212, 166, 74, 0.12);
+}
+
+
+/* 4. SECTIONS COMMUNES */
+
+.section {
+    padding: 105px 7%;
+    scroll-margin-top: var(--navigation);
+}
+
+.section-sombre {
+    background: var(--fond-2);
+    border-top: 1px solid rgba(255, 255, 255, 0.025);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+.entete-section {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.entete-section .surtitre,
+.contact-contenu .surtitre {
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.entete-section h2,
+.contact-contenu h2 {
+    font-family: var(--titre);
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+}
+
+.intro-section {
+    max-width: 620px;
+    margin: 18px auto 0;
+    color: var(--discret);
+    font-size: 0.97rem;
+}
+
+
+/* 5. À PROPOS */
+
+.apropos-grille {
+    max-width: var(--largeur);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+    gap: 75px;
+}
+
+.apropos-texte p {
+    margin-bottom: 20px;
+    color: var(--discret);
+}
+
+.apropos-texte strong {
+    color: var(--or-clair);
+}
+
+.texte-lien {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 12px;
+    color: var(--or-clair);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.texte-lien i {
+    transition: transform var(--transition);
+}
+
+.texte-lien:hover i {
+    transform: translateX(5px);
+}
+
+.apropos-points {
+    display: grid;
+    gap: 0;
+}
+
+.point-fort {
+    display: flex;
+    gap: 22px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--ligne);
+}
+
+.point-fort:first-child {
+    padding-top: 0;
+}
+
+.numero-point {
+    color: var(--or);
+    font-family: var(--titre);
+    font-size: 1.4rem;
+}
+
+.point-fort h3 {
+    margin-bottom: 5px;
+    font-family: var(--titre);
+    font-size: 1.2rem;
+}
+
+.point-fort p {
+    color: var(--discret);
+    font-size: 0.9rem;
+}
+
+
+/* 6. EXPERTISES */
+
+.competences-grille {
+    max-width: var(--largeur);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.carte-competence {
+    position: relative;
+    padding: 30px 24px;
+    min-height: 275px;
+
+    background: linear-gradient(145deg, #19191f, #121216);
+    border: 1px solid var(--ligne);
+    border-radius: 5px;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.carte-competence:hover {
+    transform: translateY(-7px);
+    border-color: rgba(212, 166, 74, 0.6);
+    background: #1d1b19;
+}
+
+.icone-competence {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 28px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--or-clair);
+    background: rgba(212, 166, 74, 0.1);
+    border: 1px solid rgba(212, 166, 74, 0.22);
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+.numero-carte {
+    position: absolute;
+    top: 29px;
+    right: 22px;
+
+    color: #66616a;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.carte-competence h3 {
+    margin-bottom: 12px;
+    font-family: var(--titre);
+    font-size: 1.27rem;
+}
+
+.carte-competence p {
+    color: var(--discret);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+
+/* 7. PORTFOLIO : VITRINE PHOTO */
+
+.portfolio-introduction {
+    max-width: var(--largeur);
+    margin: 0 auto 20px;
+    padding-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    border-bottom: 1px solid var(--ligne);
+    color: var(--discret);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.portfolio-introduction span:first-child {
+    color: var(--or-clair);
+}
+
+.galerie-vitrine {
+    max-width: var(--largeur);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 22px;
+    align-items: start;
+}
+
+.item-galerie {
+    min-width: 0;
+    overflow: hidden;
+
+    background: var(--carte);
+    border: 1px solid var(--ligne);
+    border-radius: 5px;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.item-galerie:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 166, 74, 0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.photo-ouvrir {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    background: #202026;
+    border: 0;
+    cursor: zoom-in;
+    text-align: left;
+}
+
+/*
+   Le cadre harmonise la présentation des photos.
+   object-fit: cover remplit le cadre sans déformer l'image.
+*/
+
+.photo-ouvrir img {
+    display: block;
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter var(--transition);
+}
+
+.item-galerie:hover .photo-ouvrir img {
+    transform: scale(1.045);
+    filter: brightness(0.78);
+}
+
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+
+    color: #fff;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        transparent 48%
+    );
+
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.item-galerie:hover .photo-overlay,
+.photo-ouvrir:focus-visible .photo-overlay {
+    opacity: 1;
+}
+
+.photo-overlay span {
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.photo-overlay i {
+    color: var(--or-clair);
+    font-size: 1.1rem;
+}
+
+.item-galerie figcaption {
+    padding: 15px 16px 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.legende-numero {
+    color: var(--or);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.legende-titre {
+    color: var(--texte);
+    font-family: var(--titre);
+    font-size: 1.08rem;
+    font-weight: 600;
+}
+
+
+/* 8. PROJETS */
+
+.projets-grille {
+    max-width: var(--largeur);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.carte-projet {
+    padding: 32px 27px;
+    min-height: 285px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: var(--carte);
+    border: 1px solid var(--ligne);
+    border-radius: 5px;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition);
+}
+
+.carte-projet:hover {
+    transform: translateY(-5px);
+    border-color: var(--or);
+}
+
+.projet-categorie {
+    margin-bottom: 24px;
+    color: var(--or);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.carte-projet h3 {
+    margin-bottom: 13px;
+    font-family: var(--titre);
+    font-size: 1.55rem;
+}
+
+.carte-projet p {
+    margin-bottom: 20px;
+    color: var(--discret);
+    font-size: 0.9rem;
+}
+
+.carte-projet .texte-lien {
+    margin-top: auto;
+}
+
+
+/* 9. CONTACT */
+
+.section-contact {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(212, 166, 74, 0.1),
+            transparent 60%
+        ),
+        var(--fond);
+}
+
+.contact-contenu {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-contenu h2 {
+    margin-bottom: 22px;
+}
+
+.contact-contenu > p:not(.surtitre) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--discret);
+}
+
+.contact-contenu .bouton-principal {
+    margin: 0 auto;
+}
+
+.reseaux-sociaux {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+
+.reseaux-sociaux a {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--discret);
+    background: var(--carte);
+    border: 1px solid var(--ligne);
+    border-radius: 50%;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.reseaux-sociaux a:hover {
+    color: var(--fond);
+    background: var(--or);
+    border-color: var(--or);
+}
+
+
+/* 10. VISIONNEUSE PHOTO */
+
+.visionneuse {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    padding: 70px 80px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    background: rgba(4, 4, 6, 0.96);
+    backdrop-filter: blur(12px);
+}
+
+.visionneuse.active {
+    display: flex;
+}
+
+.visionneuse img {
+    max-width: min(100%, 1050px);
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    border: 1px solid rgba(212, 166, 74, 0.25);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-fermer,
+.zoom-precedent,
+.zoom-suivant {
+    position: absolute;
+    z-index: 2;
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--texte);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition:
+        color var(--transition),
+        background var(--transition);
+}
+
+.zoom-fermer:hover,
+.zoom-precedent:hover,
+.zoom-suivant:hover {
+    color: var(--fond);
+    background: var(--or);
+}
+
+.zoom-fermer {
+    top: 25px;
+    right: 28px;
+    font-size: 1.3rem;
+}
+
+.zoom-precedent {
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.zoom-suivant {
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body.zoom-ouvert {
+    overflow: hidden;
+}
+
+
+/* 11. PIED DE PAGE */
+
+.pied-page {
+    padding: 30px 7%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: #080809;
+    border-top: 1px solid var(--ligne);
+}
+
+.pied-page .logo {
+    font-size: 1.5rem;
+}
+
+.pied-page p {
+    color: var(--discret);
+    font-size: 0.78rem;
+}
+
+.copyright {
+    text-align: right;
+}
+
+
+/* 12. RESPONSIVE : TABLETTES */
+
+@media (max-width: 1000px) {
+    :root {
+        --navigation: 72px;
+    }
+
+    .menu {
+        padding-right: 4%;
+        padding-left: 4%;
+        gap: 15px;
+    }
+
+    .liens-menu {
+        gap: 10px 15px;
+    }
+
+    .liens-menu a {
+        font-size: 0.78rem;
+    }
+
+    .section {
+        padding: 85px 5%;
+    }
+
+    .competences-grille {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .galerie-vitrine {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .photo-ouvrir img {
+        height: 340px;
+    }
+
+    .apropos-grille {
+        gap: 40px;
+    }
+
+    .projets-grille {
+        gap: 15px;
+    }
+
+    .carte-projet {
+        padding: 25px 20px;
+    }
+}
+
+
+/* 13. RESPONSIVE : TÉLÉPHONES */
+
+@media (max-width: 680px) {
+    :root {
+        --navigation: 0px;
+    }
+
+    .menu {
+        position: relative;
+        padding: 16px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .liens-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 9px 16px;
+    }
+
+    .liens-menu a {
+        font-size: 0.78rem;
+    }
+
+    .liens-menu .lien-contact {
+        padding: 5px 10px;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding: 90px 6% 90px;
+    }
+
+    .hero::before {
+        top: 10%;
+        right: -15%;
+        width: 65vw;
+        opacity: 0.55;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 10vw, 4.2rem);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 0.96rem;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
+    .hero-signature {
+        margin-top: 38px;
+        gap: 9px;
+        font-size: 0.6rem;
+    }
+
+    .defiler {
+        right: 6%;
+        bottom: 20px;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .entete-section {
+        margin-bottom: 35px;
+    }
+
+    .entete-section h2,
+    .contact-contenu h2 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .apropos-grille {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .competences-grille {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .carte-competence {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .icone-competence {
+        margin-bottom: 20px;
+    }
+
+    .galerie-vitrine {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .photo-ouvrir img {
+        height: clamp(180px, 58vw, 290px);
+    }
+
+    .item-galerie figcaption {
+        padding: 11px 10px 13px;
+    }
+
+    .legende-titre {
+        font-size: 0.93rem;
+        line-height: 1.4;
+    }
+
+    .legende-numero {
+        font-size: 0.59rem;
+    }
+
+    .photo-overlay {
+        padding: 10px;
+    }
+
+    .photo-overlay span {
+        font-size: 0.7rem;
+    }
+
+    .photo-overlay i {
+        font-size: 0.85rem;
+    }
+
+    .portfolio-introduction {
+        font-size: 0.57rem;
+        letter-spacing: 0.7px;
+        gap: 8px;
+    }
+
+    .projets-grille {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .carte-projet {
+        min-height: 245px;
+    }
+
+    .visionneuse {
+        padding: 60px 10px;
+    }
+
+    .visionneuse img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .zoom-fermer {
+        top: 12px;
+        right: 12px;
+    }
+
+    .zoom-precedent {
+        left: 8px;
+    }
+
+    .zoom-suivant {
+        right: 8px;
+    }
+
+    .zoom-fermer,
+    .zoom-precedent,
+    .zoom-suivant {
+        width: 38px;
+        height: 38px;
+    }
+
+    .pied-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 5%;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+
+
+/* 14. PETITS ÉCRANS */
+
 @media (max-width: 360px) {
-  .liens {
-    gap: 7px 10px;
-  }
+    .galerie-vitrine {
+        grid-template-columns: 1fr;
+    }
 
-  .liens a {
-    font-size: .63rem;
-  }
+    .photo-ouvrir img {
+        height: 330px;
+    }
 
-  .galerie {
-    column-count: 1;
-  }
+    .portfolio-introduction {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* 15. ACCESSIBILITÉ ET ANIMATIONS */
+
+@media (hover: none) {
+    .photo-overlay {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
