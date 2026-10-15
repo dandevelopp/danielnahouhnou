@@ -5,32 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio de DANOS : acteur, vidéaste, photographe, coach en actorat et marketeur digital à Abidjan.">
   <title>DANOS | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>DANOS</h1>
-    <p class="titres">Acteur · Vidéaste · Photographe · Coach en actorat · Marketeur digital</p>
-    <nav>
+  <nav class="menu">
+    <a href="#accueil" class="logo">DANOS</a>
+    <div class="liens">
       <a href="#apropos">À propos</a>
       <a href="#competences">Compétences</a>
       <a href="#experiences">Parcours</a>
       <a href="#projets">Projets</a>
+      <a href="#realisations">Réalisations</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </div>
+  </nav>
+
+  <header id="accueil">
+    <p class="sur-titre">Portfolio</p>
+    <h1>DANOS</h1>
+    <p class="titres">Acteur <i>·</i> Vidéaste <i>·</i> Photographe <i>·</i> Coach en actorat <i>·</i> Marketeur digital</p>
+    <a href="#realisations" class="bouton">Voir mes réalisations</a>
   </header>
 
   <main>
 
     <section id="apropos">
-      <h2>À propos</h2>
-      <p>Je suis DANOS, créateur polyvalent basé à Abidjan. Acteur, vidéaste et photographe, j'accompagne aussi d'autres comédiens en tant que coach en actorat, et je fais du marketing digital pour donner de la visibilité aux marques et aux projets.</p>
+      <h2><span>01</span> À propos</h2>
+      <p class="intro">Créateur polyvalent basé à Abidjan, je raconte des histoires par l'image, le jeu et le numérique.</p>
+      <p>Acteur, vidéaste et photographe, j'accompagne aussi d'autres comédiens en tant que coach en actorat, et je fais du marketing digital pour donner de la visibilité aux marques et aux projets.</p>
       <p>Je suis en <strong>Master Sciences du langage</strong>, option <strong>Description et Traitement Automatique des Langues</strong> (en cours).</p>
     </section>
 
     <section id="competences">
-      <h2>Compétences &amp; certifications</h2>
+      <h2><span>02</span> Compétences &amp; certifications</h2>
       <ul class="badges">
         <li>Informatique</li>
         <li>Pack Office</li>
@@ -42,29 +54,32 @@
     </section>
 
     <section id="experiences">
-      <h2>Parcours</h2>
+      <h2><span>03</span> Parcours</h2>
+      <div class="timeline">
 
-      <article>
-        <span class="date">Sept. – Oct. 2026</span>
-        <h3>Agent de collecte de données, COMSIG</h3>
-        <p>Collecte de données avec KoboCollect pour <strong>SITAB</strong> et <strong>Nestlé CI</strong> : inventaire des supports de communication externe.</p>
-      </article>
+        <article>
+          <span class="date">Sept. – Oct. 2026</span>
+          <h3>Agent de collecte de données, COMSIG</h3>
+          <p>Collecte de données avec KoboCollect pour <strong>SITAB</strong> et <strong>Nestlé CI</strong> : inventaire des supports de communication externe.</p>
+        </article>
 
-      <article>
-        <span class="date">2026</span>
-        <h3>Formation informatique, GLP</h3>
-        <p>Informatique, Pack Office, IA générative et développement web.</p>
-      </article>
+        <article>
+          <span class="date">2026</span>
+          <h3>Formation informatique, GLP</h3>
+          <p>Informatique, Pack Office, IA générative et développement web.</p>
+        </article>
 
-      <article>
-        <span class="date">En cours</span>
-        <h3>Master Sciences du langage</h3>
-        <p>Option Description et Traitement Automatique des Langues.</p>
-      </article>
+        <article>
+          <span class="date">En cours</span>
+          <h3>Master Sciences du langage</h3>
+          <p>Option Description et Traitement Automatique des Langues.</p>
+        </article>
+
+      </div>
     </section>
 
     <section id="projets">
-      <h2>Projets</h2>
+      <h2><span>04</span> Projets</h2>
       <div class="cartes">
         <article>
           <h3>ZRANSSA PHOTOGRAPHY</h3>
@@ -77,16 +92,97 @@
       </div>
     </section>
 
+    <section id="realisations">
+      <h2><span>05</span> Réalisations</h2>
+      <p class="legende-section">Cliquez sur une photo pour l'agrandir.</p>
+
+      <div class="galerie">
+        <figure><img src="images/image-1.jpg" alt="Réalisation 1" loading="lazy"></figure>
+        <figure><img src="images/image-2.jpg" alt="Réalisation 2" loading="lazy"></figure>
+        <figure><img src="images/image-3.jpg" alt="Réalisation 3" loading="lazy"></figure>
+        <figure><img src="images/image-4.jpg" alt="Réalisation 4" loading="lazy"></figure>
+        <figure><img src="images/image-5.jpg" alt="Réalisation 5" loading="lazy"></figure>
+        <figure><img src="images/image-6.jpg" alt="Réalisation 6" loading="lazy"></figure>
+        <figure><img src="images/image-7.jpg" alt="Réalisation 7" loading="lazy"></figure>
+        <figure><img src="images/image-8.jpg" alt="Réalisation 8" loading="lazy"></figure>
+        <figure><img src="images/image-9.jpg" alt="Réalisation 9" loading="lazy"></figure>
+        <figure><img src="images/image-10.jpg" alt="Réalisation 10" loading="lazy"></figure>
+      </div>
+
+      <h3 class="sous-titre">Vidéos</h3>
+      <div class="videos">
+        <!-- YouTube : remplace VIDEO_ID par l'identifiant de ta vidéo -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Vidéo 1" loading="lazy" allowfullscreen></iframe>
+
+        <!-- Fichier .mp4 dans le dossier videos (supprime ce bloc si inutilisé) -->
+        <video controls preload="metadata" poster="images/image-1.jpg">
+          <source src="videos/video1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
     <section id="contact">
-      <h2>Contact</h2>
-      <p>WhatsApp / Tél. : <a href="https://wa.me/2250777977355">07 77 97 73 55</a></p>
-      <p>Email : <a href="mailto:danielnahounou7@gmail.com">danielnahounou7@gmail.com</a></p>
-      <p>Abidjan, Côte d'Ivoire</p>
+      <h2><span>06</span> Contact</h2>
+      <div class="contact-cartes">
+        <a href="https://wa.me/2250777977355" class="contact-carte">
+          <strong>WhatsApp / Tél.</strong>
+          <span>07 77 97 73 55</span>
+        </a>
+        <a href="mailto:danielnahounou7@gmail.com" class="contact-carte">
+          <strong>Email</strong>
+          <span>danielnahounou7@gmail.com</span>
+        </a>
+        <div class="contact-carte">
+          <strong>Localisation</strong>
+          <span>Abidjan, Côte d'Ivoire</span>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <footer>© 2026 DANOS · Tous droits réservés</footer>
+
+  <!-- Visionneuse photo -->
+  <div id="zoom">
+    <button class="fermer" aria-label="Fermer">&times;</button>
+    <button class="nav prec" aria-label="Précédente">&#8249;</button>
+    <img alt="">
+    <button class="nav suiv" aria-label="Suivante">&#8250;</button>
+  </div>
+
+  <script>
+    const photos = Array.from(document.querySelectorAll('.galerie img'));
+    const zoom = document.getElementById('zoom');
+    const zoomImg = zoom.querySelector('img');
+    let index = 0;
+
+    function afficher(i) {
+      index = (i + photos.length) % photos.length;
+      zoomImg.src = photos[index].src;
+      zoomImg.alt = photos[index].alt;
+    }
+    function ouvrir(i) { afficher(i); zoom.classList.add('ouvert'); }
+    function fermer() { zoom.classList.remove('ouvert'); }
+
+    photos.forEach((img, i) => img.addEventListener('click', () => ouvrir(i)));
+    zoom.querySelector('.fermer').addEventListener('click', fermer);
+    zoom.querySelector('.prec').addEventListener('click', e => { e.stopPropagation(); afficher(index - 1); });
+    zoom.querySelector('.suiv').addEventListener('click', e => { e.stopPropagation(); afficher(index + 1); });
+    zoom.addEventListener('click', e => { if (e.target === zoom) fermer(); });
+    document.addEventListener('keydown', e => {
+      if (!zoom.classList.contains('ouvert')) return;
+      if (e.key === 'Escape') fermer();
+      if (e.key === 'ArrowLeft') afficher(index - 1);
+      if (e.key === 'ArrowRight') afficher(index + 1);
+    });
+
+    // Apparition douce des sections au défilement
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section').forEach(s => obs.observe(s));
+  </script>
 
 </body>
 </html>
