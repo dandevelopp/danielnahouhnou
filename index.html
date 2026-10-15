@@ -11,13 +11,267 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="DANOS | Photographie, vidéo et communication">
     <meta property="og:description" content="Je raconte des histoires en images.">
-    <meta property="og:image" content="./images/image-1.jpg">
+    <meta property="og:image" content="./image-1.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <style>
+/* ===== Variables ===== */
+:root {
+    --fond: #0a0908;
+    --fond-2: #141210;
+    --carte: #1b1815;
+    --texte: #f3ede4;
+    --texte-doux: #b3aa9d;
+    --or: #c9a45c;
+    --or-clair: #e2c98f;
+    --bordure: rgba(201, 164, 92, .22);
+    --police-titre: "Playfair Display", Georgia, serif;
+    --police-texte: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --hauteur-menu: 72px;
+    --largeur: 1180px;
+}
+
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--hauteur-menu); }
+body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font-family: var(--police-texte);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3 { font-family: var(--police-titre); line-height: 1.15; margin: 0; font-weight: 700; }
+p { margin: 0 0 1rem; }
+.or { color: var(--or); }
+
+:focus-visible { outline: 2px solid var(--or-clair); outline-offset: 3px; }
+
+.lien-evitement {
+    position: absolute; left: 1rem; top: -4rem; z-index: 200;
+    background: var(--or); color: #111; padding: .6rem 1rem; border-radius: 6px;
+}
+.lien-evitement:focus { top: 1rem; }
+
+.surtitre {
+    color: var(--or);
+    font-size: .9rem;
+    letter-spacing: .06em;
+    margin-bottom: .9rem;
+}
+
+/* ===== Menu ===== */
+.menu {
+    position: fixed; inset: 0 0 auto 0; z-index: 100;
+    height: var(--hauteur-menu);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.2rem, 5vw, 4rem);
+    background: rgba(10, 9, 8, .78);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s, background .3s;
+}
+.menu.defile { border-bottom-color: var(--bordure); background: rgba(10, 9, 8, .94); }
+.logo { font-family: var(--police-titre); font-size: 1.6rem; font-weight: 700; letter-spacing: .08em; }
+
+.liens-menu { display: flex; align-items: center; gap: 2rem; }
+.liens-menu a { font-size: .95rem; color: var(--texte-doux); transition: color .2s; }
+.liens-menu a:hover { color: var(--or-clair); }
+.liens-menu .lien-contact {
+    color: var(--or); border: 1px solid var(--or);
+    padding: .45rem 1.1rem; border-radius: 999px;
+}
+.liens-menu .lien-contact:hover { background: var(--or); color: #111; }
+
+.burger { display: none; background: none; border: 0; padding: .6rem; cursor: pointer; }
+.burger span { display: block; width: 24px; height: 2px; background: var(--texte); margin: 5px 0; transition: transform .3s, opacity .3s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== Boutons ===== */
+.bouton {
+    display: inline-flex; align-items: center; gap: .6rem;
+    padding: .9rem 1.8rem; border-radius: 999px;
+    font-weight: 500; transition: transform .2s, background .2s, color .2s;
+}
+.bouton:hover { transform: translateY(-2px); }
+.bouton-principal { background: var(--or); color: #14110d; }
+.bouton-principal:hover { background: var(--or-clair); }
+.bouton-secondaire { border: 1px solid var(--bordure); color: var(--texte); }
+.bouton-secondaire:hover { border-color: var(--or); color: var(--or-clair); }
+
+/* ===== Accueil ===== */
+.hero {
+    min-height: 100svh;
+    display: grid; place-items: center;
+    padding: calc(var(--hauteur-menu) + 2rem) clamp(1.2rem, 5vw, 4rem) 4rem;
+    background:
+        linear-gradient(180deg, rgba(10, 9, 8, .55), var(--fond) 98%),
+        url("./image-1.jpg") center 25% / cover no-repeat,
+        var(--fond);
+}
+.hero-contenu { max-width: 820px; text-align: center; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); margin-bottom: 1.4rem; }
+.hero-description { font-size: 1.15rem; color: var(--texte-doux); max-width: 56ch; margin: 0 auto 2rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.hero-signature { margin: 3rem 0 0; font-family: var(--police-titre); font-style: italic; color: var(--or-clair); }
+
+/* ===== Sections ===== */
+.section { padding: clamp(4.5rem, 9vw, 7.5rem) clamp(1.2rem, 5vw, 4rem); }
+.section > * { max-width: var(--largeur); margin-inline: auto; }
+.section-claire { background: var(--fond-2); }
+
+.entete-section { text-align: center; max-width: 640px !important; margin-bottom: 3.5rem !important; }
+.entete-section h2 { font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 1rem; }
+.entete-section p:last-child { color: var(--texte-doux); margin: 0; }
+
+/* ===== À propos ===== */
+.apropos-grille { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.apropos-texte { max-width: 62ch; color: var(--texte-doux); font-size: 1.05rem; }
+.apropos-texte strong { color: var(--or-clair); font-weight: 500; }
+.apropos-points { display: grid; gap: 1rem; }
+.point-fort { padding: 1.4rem 1.6rem; border-left: 2px solid var(--or); background: var(--carte); }
+.point-fort h3 { font-size: 1.2rem; margin-bottom: .4rem; display: flex; align-items: center; gap: .7rem; }
+.point-fort i { color: var(--or); font-size: 1rem; }
+.point-fort p { margin: 0; color: var(--texte-doux); font-size: .97rem; }
+
+/* ===== Expertises ===== */
+.competences-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+.carte-competence { padding: 2rem; border: 1px solid var(--bordure); border-radius: 14px; transition: border-color .25s, transform .25s; }
+.carte-competence:hover { border-color: var(--or); transform: translateY(-4px); }
+.carte-competence .icone { color: var(--or); font-size: 1.5rem; margin-bottom: 1.2rem; }
+.carte-competence h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+.carte-competence p { margin: 0; color: var(--texte-doux); font-size: .97rem; }
+
+/* ===== Galerie ===== */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: .9rem;
+}
+.item-galerie { margin: 0; position: relative; aspect-ratio: 4 / 5; background: var(--carte); overflow: hidden; border-radius: 10px; }
+.item-galerie:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.item-galerie:nth-child(6) { grid-column: span 2; aspect-ratio: auto; }
+
+.photo-ouvrir { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; position: relative; }
+.photo-ouvrir:focus-visible { outline: 2px solid var(--or-clair); outline-offset: -4px; }
+.photo-ouvrir img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.item-galerie:hover img { transform: scale(1.05); }
+
+.photo-overlay {
+    position: absolute; inset: auto 0 0 0;
+    padding: 2.5rem 1.1rem 1rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .75), transparent);
+    opacity: 0; transition: opacity .3s;
+}
+.item-galerie:hover .photo-overlay,
+.photo-ouvrir:focus-visible .photo-overlay { opacity: 1; }
+.legende-titre { font-family: var(--police-titre); font-size: 1.15rem; }
+
+/* Photo manquante : message clair au lieu d'une case cassée */
+.item-galerie.image-indisponible img { display: none; }
+.item-galerie.image-indisponible::after {
+    content: "Photo introuvable : vérifie son nom sur GitHub";
+    position: absolute; inset: 0; display: grid; place-items: center;
+    padding: 1rem; text-align: center; font-size: .85rem; color: var(--texte-doux);
+}
+
+.message-galerie { text-align: center; margin: 3rem auto 0 !important; font-family: var(--police-titre); font-style: italic; font-size: 1.25rem; color: var(--or-clair); }
+
+/* ===== Projets ===== */
+.projets-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.6rem; max-width: 960px !important; }
+.carte-projet { padding: 2.4rem; background: var(--carte); border: 1px solid var(--bordure); border-radius: 14px; display: flex; flex-direction: column; align-items: flex-start; }
+.carte-projet h3 { font-size: 1.6rem; margin-bottom: .8rem; }
+.carte-projet p { color: var(--texte-doux); flex: 1; }
+.carte-projet a { color: var(--or); font-weight: 500; display: inline-flex; gap: .5rem; align-items: center; margin-top: .5rem; }
+.carte-projet a i { transition: transform .2s; }
+.carte-projet a:hover i { transform: translateX(4px); }
+
+/* ===== Contact ===== */
+.section-contact { text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(201, 164, 92, .14), transparent 65%), var(--fond); }
+.contact-contenu { max-width: 680px !important; }
+.contact-contenu h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 1.2rem; }
+.contact-contenu > p:not(.surtitre) { color: var(--texte-doux); margin-bottom: 2rem; }
+.reseaux-sociaux { display: flex; justify-content: center; gap: .9rem; margin-top: 2.5rem; }
+.reseaux-sociaux a {
+    width: 46px; height: 46px; display: grid; place-items: center;
+    border: 1px solid var(--bordure); border-radius: 50%; color: var(--texte-doux);
+    transition: all .25s;
+}
+.reseaux-sociaux a:hover { background: var(--or); border-color: var(--or); color: #111; transform: translateY(-3px); }
+
+/* ===== Visionneuse ===== */
+.visionneuse {
+    position: fixed; inset: 0; z-index: 300;
+    display: none; place-items: center;
+    background: rgba(0, 0, 0, .94); padding: 3.5rem 4rem;
+}
+.visionneuse.active { display: grid; }
+.visionneuse[hidden] { display: none; }
+.visionneuse img { max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 6px; }
+.visionneuse button {
+    position: absolute; background: rgba(255, 255, 255, .08); border: 0; color: #fff;
+    width: 46px; height: 46px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; transition: background .2s;
+}
+.visionneuse button:hover { background: var(--or); color: #111; }
+.zoom-fermer { top: 1rem; right: 1rem; font-size: 1.8rem !important; }
+.zoom-precedent { left: 1rem; top: 50%; transform: translateY(-50%); }
+.zoom-suivant { right: 1rem; top: 50%; transform: translateY(-50%); }
+
+/* ===== Pied de page ===== */
+.pied-page { text-align: center; padding: 2.5rem 1rem; border-top: 1px solid var(--bordure); color: var(--texte-doux); font-size: .9rem; }
+.pied-page p { margin: .2rem 0; }
+
+/* ===== Tablette ===== */
+@media (max-width: 960px) {
+    .apropos-grille { grid-template-columns: 1fr; }
+    .galerie { grid-template-columns: repeat(3, 1fr); }
+    .item-galerie:nth-child(6) { grid-column: auto; aspect-ratio: 4 / 5; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 720px) {
+    .burger { display: block; }
+    #navigation {
+        position: fixed; inset: var(--hauteur-menu) 0 auto 0;
+        background: rgba(10, 9, 8, .98); border-bottom: 1px solid var(--bordure);
+        padding: 1.5rem; display: none;
+    }
+    #navigation.ouvert { display: block; }
+    .liens-menu { flex-direction: column; align-items: stretch; gap: .4rem; text-align: center; }
+    .liens-menu a { display: block; padding: .8rem; font-size: 1.05rem; }
+
+    .galerie { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+    .item-galerie:nth-child(1) { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 5; }
+    .photo-overlay { opacity: 1; padding-top: 1.8rem; } /* pas de survol sur téléphone */
+    .visionneuse { padding: 4rem 1rem; }
+    .hero { background-position: center top; }
+}
+
+/* ===== Accessibilité : réduit les animations si demandé ===== */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ===== Coordonnées ===== */
+.coordonnees { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem 2rem; margin: 2rem 0 0; color: var(--texte-doux); }
+.coordonnees a { display: inline-flex; align-items: center; gap: .6rem; transition: color .2s; }
+.coordonnees a:hover { color: var(--or-clair); }
+.coordonnees i { color: var(--or); }
+.reseaux-sociaux a { width: auto; min-width: 46px; padding: 0 1.1rem; border-radius: 999px; gap: .5rem; display: inline-flex; align-items: center; justify-content: center; height: 46px; font-size: .95rem; }
+.pied-page .github { color: var(--or-clair); }
+
+    </style>
 </head>
 
 <body>
@@ -147,62 +401,62 @@
 
             <div class="galerie">
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-1.jpg" aria-label="Agrandir la photo 1 : Portrait">
-                        <img src="./images/image-1.jpg" alt="Portrait, photographie DANOS" width="800" height="1000" fetchpriority="high">
+                    <button class="photo-ouvrir" type="button" data-image="./image-1.jpg" aria-label="Agrandir la photo 1 : Portrait">
+                        <img src="./image-1.jpg" alt="Portrait, photographie DANOS" width="800" height="1000" fetchpriority="high">
                         <span class="photo-overlay"><span class="legende-titre">Portrait</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-2.jpg" aria-label="Agrandir la photo 2 : Expression">
-                        <img src="./images/image-2.jpg" alt="Expression, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-2.jpg" aria-label="Agrandir la photo 2 : Expression">
+                        <img src="./image-2.jpg" alt="Expression, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Expression</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-3.jpg" aria-label="Agrandir la photo 3 : Style">
-                        <img src="./images/image-3.jpg" alt="Style, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-3.jpg" aria-label="Agrandir la photo 3 : Style">
+                        <img src="./image-3.jpg" alt="Style, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Style</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-4.jpg" aria-label="Agrandir la photo 4 : Créativité">
-                        <img src="./images/image-4.jpg" alt="Créativité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-4.jpg" aria-label="Agrandir la photo 4 : Créativité">
+                        <img src="./image-4.jpg" alt="Créativité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Créativité</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-5.jpg" aria-label="Agrandir la photo 5 : Lumière">
-                        <img src="./images/image-5.jpg" alt="Lumière, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-5.jpg" aria-label="Agrandir la photo 5 : Lumière">
+                        <img src="./image-5.jpg" alt="Lumière, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Lumière</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-6.jpg" aria-label="Agrandir la photo 6 : Présence">
-                        <img src="./images/image-6.jpg" alt="Présence, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-6.jpg" aria-label="Agrandir la photo 6 : Présence">
+                        <img src="./image-6.jpg" alt="Présence, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Présence</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-7.jpg" aria-label="Agrandir la photo 7 : Identité">
-                        <img src="./images/image-7.jpg" alt="Identité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-7.jpg" aria-label="Agrandir la photo 7 : Identité">
+                        <img src="./image-7.jpg" alt="Identité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Identité</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-8.jpg" aria-label="Agrandir la photo 8 : Inspiration">
-                        <img src="./images/image-8.jpg" alt="Inspiration, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-8.jpg" aria-label="Agrandir la photo 8 : Inspiration">
+                        <img src="./image-8.jpg" alt="Inspiration, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Inspiration</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-9.jpg" aria-label="Agrandir la photo 9 : Vision">
-                        <img src="./images/image-9.jpg" alt="Vision, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-9.jpg" aria-label="Agrandir la photo 9 : Vision">
+                        <img src="./image-9.jpg" alt="Vision, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Vision</span></span>
                     </button>
                 </figure>
                 <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./images/image-10.jpg" aria-label="Agrandir la photo 10 : Signature">
-                        <img src="./images/image-10.jpg" alt="Signature, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
+                    <button class="photo-ouvrir" type="button" data-image="./image-10.jpg" aria-label="Agrandir la photo 10 : Signature">
+                        <img src="./image-10.jpg" alt="Signature, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
                         <span class="photo-overlay"><span class="legende-titre">Signature</span></span>
                     </button>
                 </figure>
