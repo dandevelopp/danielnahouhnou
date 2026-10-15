@@ -1,408 +1,390 @@
-:root {
-  --fond: #0b0b0d;
-  --fond-2: #111115;
-  --carte: #17171c;
-  --ligne: #26262d;
-  --texte: #ececef;
-  --discret: #9b9ba6;
-  --or: #d4a64a;
-  --or-clair: #f1d089;
-  --titre: "Playfair Display", Georgia, serif;
-  --corps: "Poppins", "Segoe UI", Arial, sans-serif;
-}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* =========================================
+   DANOS — FINITION PREMIUM
+   À ajouter à la fin de style.css
+========================================= */
 
-html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-
-body {
-  font-family: var(--corps);
-  font-weight: 300;
-  background: var(--fond);
-  color: var(--texte);
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: var(--or); text-decoration: none; }
-strong { font-weight: 500; color: #fff; }
-
-/* ---------- Menu ---------- */
+/* 1. Navigation plus élégante */
 .menu {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 5vw;
-  background: rgba(11, 11, 13, .75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--ligne);
+  min-height: 74px;
+  padding-inline: clamp(18px, 5vw, 76px);
+  gap: 24px;
+  transition: background .3s ease;
 }
 
 .logo {
-  font-family: var(--titre);
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 4px;
-  color: var(--or);
+  white-space: nowrap;
+  transition: color .3s ease;
 }
 
-.liens { display: flex; gap: 26px; }
+.liens {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 26px);
+}
 
 .liens a {
-  color: var(--texte);
-  font-size: .82rem;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  position: relative;
-  padding: 4px 0;
+  font-size: .76rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
-.liens a::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 0; height: 1px;
-  background: var(--or);
-  transition: width .3s;
-}
-
-.liens a:hover { color: var(--or); }
-.liens a:hover::after { width: 100%; }
-
-/* ---------- Accueil ---------- */
+/* 2. Accueil plus cinématographique */
 header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 120px 20px 80px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(212, 166, 74, .18), transparent 60%),
-    var(--fond);
-}
-
-.sur-titre {
-  font-size: .8rem;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  color: var(--discret);
-  margin-bottom: 14px;
+    radial-gradient(
+      ellipse at 50% 38%,
+      rgba(212, 166, 74, .15),
+      transparent 55%
+    ),
+    linear-gradient(180deg, #101014, #0b0b0d);
 }
 
 header h1 {
-  font-family: var(--titre);
-  font-weight: 800;
-  font-size: clamp(3.5rem, 14vw, 9rem);
-  line-height: 1;
-  letter-spacing: 10px;
-  background: linear-gradient(135deg, var(--or-clair), var(--or) 55%, #9c7425);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 50px rgba(212, 166, 74, .08);
 }
-
-.titres {
-  margin-top: 24px;
-  font-size: clamp(.9rem, 2.4vw, 1.15rem);
-  letter-spacing: 2px;
-  color: var(--discret);
-  max-width: 800px;
-}
-
-.titres i { color: var(--or); font-style: normal; margin: 0 6px; }
 
 .bouton {
-  margin-top: 40px;
-  padding: 14px 34px;
-  border: 1px solid var(--or);
-  color: var(--or);
-  font-size: .8rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  transition: background .3s, color .3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  border-radius: 2px;
 }
 
-.bouton:hover { background: var(--or); color: #111; }
+.bouton:focus-visible,
+.liens a:focus-visible,
+.contact-carte:focus-visible {
+  outline: 2px solid var(--or-clair);
+  outline-offset: 5px;
+}
 
-/* ---------- Sections ---------- */
-main { max-width: 1100px; margin: 0 auto; padding: 0 22px; }
-
+/* 3. Sections et titres */
 section {
-  padding: 90px 0;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .8s ease, transform .8s ease;
+  scroll-margin-top: 85px;
 }
 
-section.visible { opacity: 1; transform: none; }
+section p {
+  line-height: 1.9;
+}
 
 h2 {
-  font-family: var(--titre);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
-  color: #fff;
-  margin-bottom: 36px;
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-
-h2 span {
-  font-family: var(--corps);
-  font-size: .85rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: var(--or);
-}
-
-h2::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--ligne), transparent);
-  align-self: center;
-}
-
-section p { margin-bottom: 14px; max-width: 760px; color: #c9c9d1; }
-
-.intro {
-  font-family: var(--titre);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  line-height: 1.5;
-  color: var(--or-clair) !important;
-  margin-bottom: 24px !important;
-}
-
-/* ---------- Compétences ---------- */
-.badges { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
-
-.badges li {
-  padding: 9px 22px;
-  border: 1px solid var(--ligne);
-  background: var(--carte);
-  border-radius: 999px;
-  font-size: .9rem;
-  letter-spacing: .5px;
-  transition: border-color .3s, color .3s, transform .3s;
-}
-
-.badges li:hover { border-color: var(--or); color: var(--or); transform: translateY(-3px); }
-
-/* ---------- Parcours ---------- */
-.timeline { position: relative; padding-left: 28px; }
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 4px; top: 8px; bottom: 8px;
-  width: 1px;
-  background: var(--ligne);
-}
-
-.timeline article { position: relative; margin-bottom: 34px; }
-
-.timeline article::before {
-  content: "";
-  position: absolute;
-  left: -29px; top: 10px;
-  width: 11px; height: 11px;
-  border-radius: 50%;
-  background: var(--or);
-  box-shadow: 0 0 0 5px rgba(212, 166, 74, .15);
-}
-
-.date {
-  display: inline-block;
-  font-size: .75rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--or);
+  line-height: 1.3;
+  flex-wrap: wrap;
 }
 
 h3 {
-  font-family: var(--titre);
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: #fff;
-  margin: 2px 0 6px;
+  line-height: 1.4;
 }
 
-/* ---------- Projets ---------- */
-.cartes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
+/* Ne pas cacher le contenu si le script d'animation échoue */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* 4. Compétences et cartes */
+.badges li {
+  cursor: default;
+  background: linear-gradient(145deg, #19191e, #121216);
 }
 
 .cartes article {
-  background: var(--carte);
-  border: 1px solid var(--ligne);
-  border-top: 2px solid var(--or);
-  border-radius: 6px;
-  padding: 28px;
-  transition: transform .3s, box-shadow .3s;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #19191e, #111115);
 }
 
 .cartes article:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  border-color: rgba(212, 166, 74, .65);
 }
 
-/* ---------- Galerie ---------- */
-.legende-section { font-size: .85rem; color: var(--discret) !important; margin-bottom: 26px !important; }
-
-.galerie { column-count: 3; column-gap: 16px; }
+/* 5. Galerie : vitrine photographique */
+.galerie {
+  column-count: 3;
+  column-gap: 18px;
+}
 
 .galerie figure {
   position: relative;
-  break-inside: avoid;
-  margin-bottom: 16px;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 8px;
   overflow: hidden;
-  border-radius: 6px;
-  background: var(--carte);
+  background: #17171c;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .16);
   cursor: zoom-in;
 }
 
-.galerie img {
+.galerie figure img {
   display: block;
   width: 100%;
   height: auto;
-  transition: transform .7s ease, filter .4s;
+  min-height: 120px;
+  object-fit: cover;
+  transition:
+    transform .65s cubic-bezier(.2, .7, .2, 1),
+    filter .45s ease;
 }
 
+/* Voile élégant au survol */
 .galerie figure::after {
-  content: "+";
+  content: "AGRANDIR  ↗";
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--titre);
-  font-size: 3rem;
+  padding: 15px;
   color: var(--or-clair);
-  background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.65));
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, .03),
+    rgba(0, 0, 0, .7)
+  );
   opacity: 0;
-  transition: opacity .4s;
+  pointer-events: none;
+  transition: opacity .35s ease;
 }
 
-.galerie figure:hover img { transform: scale(1.08); }
-.galerie figure:hover::after { opacity: 1; }
+.galerie figure:hover img {
+  transform: scale(1.045);
+  filter: brightness(.8);
+}
 
-.sous-titre { margin: 60px 0 20px; }
+.galerie figure:hover::after {
+  opacity: 1;
+}
 
-/* ---------- Vidéos ---------- */
+.galerie figure:focus-within {
+  outline: 2px solid var(--or);
+  outline-offset: 3px;
+}
+
+/* 6. Vidéos harmonisées */
 .videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  align-items: start;
 }
 
-.videos iframe, .videos video {
+.videos iframe,
+.videos video {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border: 1px solid var(--ligne);
-  border-radius: 6px;
-  background: #000;
+  height: auto;
+  background: #050505;
+  border-radius: 8px;
 }
 
-/* ---------- Contact ---------- */
-.contact-cartes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
+/* 7. Contact */
 .contact-carte {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 26px;
-  background: var(--carte);
-  border: 1px solid var(--ligne);
-  border-radius: 6px;
-  color: var(--texte);
-  transition: border-color .3s, transform .3s;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  border-radius: 8px;
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease;
 }
 
-a.contact-carte:hover { border-color: var(--or); transform: translateY(-4px); }
-
-.contact-carte strong {
-  font-size: .75rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--or);
+a.contact-carte:hover {
+  background: #1d1b17;
 }
 
-.contact-carte span { word-break: break-word; }
-
-/* ---------- Pied de page ---------- */
-footer {
-  text-align: center;
-  padding: 36px 20px;
-  font-size: .8rem;
-  letter-spacing: 1px;
-  color: var(--discret);
-  border-top: 1px solid var(--ligne);
-  background: var(--fond-2);
-}
-
-/* ---------- Visionneuse ---------- */
+/* 8. Visionneuse grand format */
 #zoom {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 60px;
-  background: rgba(0, 0, 0, .94);
+  z-index: 1000;
+  padding: 60px 70px;
+  backdrop-filter: blur(12px);
 }
-
-#zoom.ouvert { display: flex; }
 
 #zoom img {
+  display: block;
+  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 100%;
-  border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+  max-height: 85vh;
+  object-fit: contain;
 }
 
 #zoom button {
-  position: absolute;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  transition: color .2s;
+  z-index: 2;
+  min-width: 44px;
+  min-height: 44px;
 }
 
-#zoom button:hover { color: var(--or); }
+#zoom .fermer {
+  top: 16px;
+  right: 20px;
+}
 
-#zoom .fermer { top: 14px; right: 22px; font-size: 2.6rem; line-height: 1; }
-#zoom .nav { top: 50%; transform: translateY(-50%); font-size: 3.4rem; padding: 10px 16px; }
-#zoom .prec { left: 4px; }
-#zoom .suiv { right: 4px; }
+#zoom .nav {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+}
 
-/* ---------- Responsive ---------- */
+#zoom .nav:hover {
+  color: #111;
+  background: var(--or);
+}
+
+/* 9. Tablettes */
 @media (max-width: 900px) {
-  .galerie { column-count: 2; }
-  .liens { gap: 16px; }
+  .menu {
+    padding-inline: 22px;
+  }
+
+  .liens {
+    gap: 10px 16px;
+  }
+
+  .liens a {
+    font-size: .7rem;
+    letter-spacing: .5px;
+  }
+
+  .galerie {
+    column-count: 2;
+    column-gap: 14px;
+  }
+
+  .galerie figure {
+    margin-bottom: 14px;
+  }
 }
 
-@media (max-width: 680px) {
-  .menu { justify-content: center; }
-  .liens { display: none; }
-  section { padding: 60px 0; }
-  .galerie { column-count: 1; }
-  #zoom { padding: 60px 10px; }
+/* 10. Téléphones */
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 20px;
+  }
+
+  .menu {
+    position: sticky;
+    min-height: auto;
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .liens {
+    display: flex;
+    justify-content: center;
+    gap: 8px 14px;
+    width: 100%;
+  }
+
+  .liens a {
+    font-size: .68rem;
+    letter-spacing: 0;
+  }
+
+  header {
+    min-height: 85svh;
+    padding: 80px 18px 55px;
+  }
+
+  header h1 {
+    font-size: clamp(3rem, 14vw, 5rem);
+    letter-spacing: 3px;
+  }
+
+  .sur-titre {
+    font-size: .68rem;
+    letter-spacing: 4px;
+  }
+
+  .titres {
+    letter-spacing: .5px;
+    line-height: 1.9;
+  }
+
+  main {
+    padding-inline: 18px;
+  }
+
+  section {
+    padding: 58px 0;
+  }
+
+  h2 {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .galerie {
+    column-count: 2;
+    column-gap: 9px;
+  }
+
+  .galerie figure {
+    margin-bottom: 9px;
+    border-radius: 5px;
+  }
+
+  .galerie figure img {
+    min-height: 90px;
+  }
+
+  .galerie figure::after {
+    content: "↗";
+    font-size: 1.5rem;
+    letter-spacing: 0;
+  }
+
+  .videos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #zoom {
+    padding: 55px 8px;
+  }
+
+  #zoom img {
+    max-height: 78vh;
+  }
+
+  #zoom .prec {
+    left: 4px;
+  }
+
+  #zoom .suiv {
+    right: 4px;
+  }
+}
+
+/* 11. Très petits écrans */
+@media (max-width: 360px) {
+  .liens {
+    gap: 7px 10px;
+  }
+
+  .liens a {
+    font-size: .63rem;
+  }
+
+  .galerie {
+    column-count: 1;
+  }
 }
