@@ -229,7 +229,6 @@ p { margin: 0 0 1rem; }
 
     .galerie { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
     .item-galerie:nth-child(1) { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 5; }
-    .item-galerie:nth-child(6) { grid-column: span 2; aspect-ratio: 16 / 10; }
     .photo-overlay { opacity: 1; padding-top: 1.8rem; } /* pas de survol sur téléphone */
     .visionneuse { padding: 4rem 1rem; }
     .hero { background-position: center top; }
