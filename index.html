@@ -154,13 +154,12 @@ p { margin: 0 0 1rem; }
 /* ===== Galerie ===== */
 .galerie {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: dense;
     gap: .9rem;
 }
 .item-galerie { margin: 0; position: relative; aspect-ratio: 4 / 5; background: var(--carte); overflow: hidden; border-radius: 10px; }
 .item-galerie:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-.item-galerie:nth-child(6) { grid-column: span 2; aspect-ratio: auto; }
 
 .photo-ouvrir { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; position: relative; }
 .photo-ouvrir:focus-visible { outline: 2px solid var(--or-clair); outline-offset: -4px; }
@@ -234,8 +233,6 @@ p { margin: 0 0 1rem; }
 /* ===== Tablette ===== */
 @media (max-width: 960px) {
     .apropos-grille { grid-template-columns: 1fr; }
-    .galerie { grid-template-columns: repeat(3, 1fr); }
-    .item-galerie:nth-child(6) { grid-column: auto; aspect-ratio: 4 / 5; }
 }
 
 /* ===== Mobile ===== */
@@ -252,6 +249,7 @@ p { margin: 0 0 1rem; }
 
     .galerie { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
     .item-galerie:nth-child(1) { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 5; }
+    .item-galerie:nth-child(6) { grid-column: span 2; aspect-ratio: 16 / 10; }
     .photo-overlay { opacity: 1; padding-top: 1.8rem; } /* pas de survol sur téléphone */
     .visionneuse { padding: 4rem 1rem; }
     .hero { background-position: center top; }
@@ -436,30 +434,6 @@ p { margin: 0 0 1rem; }
                         <span class="photo-overlay"><span class="legende-titre">Présence</span></span>
                     </button>
                 </figure>
-                <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./image-7.jpg" aria-label="Agrandir la photo 7 : Identité">
-                        <img src="./image-7.jpg" alt="Identité, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
-                        <span class="photo-overlay"><span class="legende-titre">Identité</span></span>
-                    </button>
-                </figure>
-                <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./image-8.jpg" aria-label="Agrandir la photo 8 : Inspiration">
-                        <img src="./image-8.jpg" alt="Inspiration, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
-                        <span class="photo-overlay"><span class="legende-titre">Inspiration</span></span>
-                    </button>
-                </figure>
-                <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./image-9.jpg" aria-label="Agrandir la photo 9 : Vision">
-                        <img src="./image-9.jpg" alt="Vision, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
-                        <span class="photo-overlay"><span class="legende-titre">Vision</span></span>
-                    </button>
-                </figure>
-                <figure class="item-galerie">
-                    <button class="photo-ouvrir" type="button" data-image="./image-10.jpg" aria-label="Agrandir la photo 10 : Signature">
-                        <img src="./image-10.jpg" alt="Signature, photographie DANOS" width="800" height="1000" loading="lazy" decoding="async">
-                        <span class="photo-overlay"><span class="legende-titre">Signature</span></span>
-                    </button>
-                </figure>
             </div>
 
             <p class="message-galerie">Chaque image raconte une histoire.</p>
@@ -507,8 +481,8 @@ p { margin: 0 0 1rem; }
                 <!-- Vérifie les liens Facebook et YouTube, puis corrige-les si besoin -->
                 <div class="reseaux-sociaux">
                     <a href="https://wa.me/2250777977355" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
-                    <a href="https://www.facebook.com/danielnahoun/" target="_blank" rel="noopener noreferrer" aria-label="Facebook : DANOS"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> DANOS</a>
-                    <a href="https://youtube.com/@authenticdan-d3k?si=emSZQPpI7Jg2ILEq" target="_blank" rel="noopener noreferrer" aria-label="YouTube : Danosoff"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Danosoff</a>
+                    <a href="https://www.facebook.com/search/top?q=DANOS" target="_blank" rel="noopener noreferrer" aria-label="Facebook : DANOS"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> DANOS</a>
+                    <a href="https://www.youtube.com/@Danosoff" target="_blank" rel="noopener noreferrer" aria-label="YouTube : Danosoff"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Danosoff</a>
                 </div>
             </div>
         </section>
