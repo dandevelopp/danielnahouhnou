@@ -95,7 +95,7 @@ p { margin: 0 0 1rem; }
     padding: calc(var(--hauteur-menu) + 2rem) clamp(1.2rem, 5vw, 4rem) 4rem;
     background:
         linear-gradient(180deg, rgba(10, 9, 8, .55), var(--fond) 98%),
-        url("./images/image-1.jpg") center 25% / cover no-repeat,
+        url("./image-1.jpg") center 25% / cover no-repeat,
         var(--fond);
 }
 .hero-contenu { max-width: 820px; text-align: center; }
@@ -134,13 +134,12 @@ p { margin: 0 0 1rem; }
 /* ===== Galerie ===== */
 .galerie {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: dense;
     gap: .9rem;
 }
 .item-galerie { margin: 0; position: relative; aspect-ratio: 4 / 5; background: var(--carte); overflow: hidden; border-radius: 10px; }
 .item-galerie:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-.item-galerie:nth-child(6) { grid-column: span 2; aspect-ratio: auto; }
 
 .photo-ouvrir { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; position: relative; }
 .photo-ouvrir:focus-visible { outline: 2px solid var(--or-clair); outline-offset: -4px; }
@@ -160,7 +159,7 @@ p { margin: 0 0 1rem; }
 /* Photo manquante : message clair au lieu d'une case cassée */
 .item-galerie.image-indisponible img { display: none; }
 .item-galerie.image-indisponible::after {
-    content: "Photo introuvable : vérifie le nom et le dossier images/";
+    content: "Photo introuvable : vérifie son nom sur GitHub";
     position: absolute; inset: 0; display: grid; place-items: center;
     padding: 1rem; text-align: center; font-size: .85rem; color: var(--texte-doux);
 }
@@ -214,8 +213,6 @@ p { margin: 0 0 1rem; }
 /* ===== Tablette ===== */
 @media (max-width: 960px) {
     .apropos-grille { grid-template-columns: 1fr; }
-    .galerie { grid-template-columns: repeat(3, 1fr); }
-    .item-galerie:nth-child(6) { grid-column: auto; aspect-ratio: 4 / 5; }
 }
 
 /* ===== Mobile ===== */
@@ -232,6 +229,7 @@ p { margin: 0 0 1rem; }
 
     .galerie { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
     .item-galerie:nth-child(1) { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 5; }
+    .item-galerie:nth-child(6) { grid-column: span 2; aspect-ratio: 16 / 10; }
     .photo-overlay { opacity: 1; padding-top: 1.8rem; } /* pas de survol sur téléphone */
     .visionneuse { padding: 4rem 1rem; }
     .hero { background-position: center top; }
